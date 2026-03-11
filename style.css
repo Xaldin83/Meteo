@@ -1,0 +1,129 @@
+/* --- Styles Généraux --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: #2d3436;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+/* --- Formulaire de Recherche --- */
+form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    padding: 10px 15px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #0984e3;
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0984e3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+input[type="button"]:hover {
+    background-color: #074b83;
+    transform: translateY(-2px);
+}
+
+#button_fav {
+    background-color: #00b894;
+}
+
+#button_fav:hover {
+    background-color: #00896e;
+}
+
+/* --- Section Favoris et Résultats --- */
+#favoris {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Style pour chaque bloc de ville généré par le JS */
+#favoris h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #0984e3;
+}
+
+#favoris p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#favoris img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Carte de ville (le conteneur généré) */
+/* Note : Puisque ton JS injecte du HTML brut, ce style s'applique aux éléments à l'intérieur de #favoris */
+#favoris > br {
+    display: none; /* On cache les <br> pour utiliser le Flexbox/Grid */
+}
+
+/* --- Bouton "Ajouter aux favoris" --- */
+.fav {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #fab1a0;
+    border: none;
+    border-radius: 5px;
+    color: #d63031;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.fav:hover {
+    background-color: #ff7675;
+    color: white;
+}
+
+/* Style d'une "carte" de ville */
+/* Pour que cela fonctionne bien, il serait idéal d'entourer tes résultats d'une div "card" dans ton JS */
+#favoris {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
